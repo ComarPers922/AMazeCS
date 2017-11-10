@@ -130,7 +130,7 @@ namespace AMazeCS
             }
             if (!isSolved)
             {
-                throw new Exception("Unsolved Maze!");
+                throw new Exception("Unsolvable Maze!");
             }
         }
         private void findPath(Position destination)

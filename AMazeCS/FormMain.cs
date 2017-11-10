@@ -51,8 +51,15 @@ namespace AMazeCS
 
         private void Button_Solve_Click(object sender, EventArgs e)
         {
-            Maze.Solve();
-            Panel_Game.Invalidate();
+            try
+            {
+                Maze.Solve();
+                Panel_Game.Invalidate();
+            }
+            catch
+            {
+                MessageBox.Show("迷宫无解！！！");
+            }
         }
     }
 }
