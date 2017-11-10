@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMazeCS", "AMazeCS\AMazeCS.csproj", "{9DB70CAA-2078-4C09-AF77-A0D7203E286D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DB70CAA-2078-4C09-AF77-A0D7203E286D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB70CAA-2078-4C09-AF77-A0D7203E286D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB70CAA-2078-4C09-AF77-A0D7203E286D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB70CAA-2078-4C09-AF77-A0D7203E286D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36C9DCCE-8BDF-4178-9F84-2D2C1D75DDED}
+	EndGlobalSection
+EndGlobal
