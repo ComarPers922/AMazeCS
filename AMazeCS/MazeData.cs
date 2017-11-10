@@ -9,13 +9,13 @@ namespace AMazeCS
 {
     public enum TileType
     {
-        Road, Wall, SolvedRoad
+        Road, Wall
     }
     public class MazeData
     {
         public readonly TileType[,] Maze;
         public readonly int Size;
-        public bool[,] isPath { private set; get; }
+        public bool[,] IsPath { private set; get; }
 
         private readonly bool[,] visited;
         private readonly int[,] direction = new int[4,2]{{-1,0},{0,1},{1,0},{0,-1}};
@@ -33,7 +33,7 @@ namespace AMazeCS
             exitY = Size - 2;
             Maze = new TileType[Size,Size];
             visited = new bool[Size,Size];
-            isPath = new bool[Size,Size];
+            IsPath = new bool[Size,Size];
             solutionVisited = new bool[Size,Size];
             Reset();
         }
@@ -57,7 +57,7 @@ namespace AMazeCS
                     }
                     visited[i,j] = false;
                     solutionVisited[i, j] = false;
-                    isPath[i, j] = false;
+                    IsPath[i, j] = false;
                 }
             }
             Maze[entranceX,entranceY] = TileType.Road;
@@ -93,7 +93,7 @@ namespace AMazeCS
                 for (int j = 0; j < Size; j++)
                 {
                     solutionVisited[i,j] = false;
-                    isPath[i,j] = false;
+                    IsPath[i,j] = false;
                 }
             }
             bool isSolved = false;
@@ -139,7 +139,7 @@ namespace AMazeCS
             Position currentPosition = destination;
             while (currentPosition != null)
             {
-                isPath[currentPosition.X,currentPosition.Y] = true;
+                IsPath[currentPosition.X,currentPosition.Y] = true;
                 currentPosition = currentPosition.From;
             }
         }

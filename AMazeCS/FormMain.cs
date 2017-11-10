@@ -35,7 +35,7 @@ namespace AMazeCS
                         default:
                             break;
                     }
-                    if(Maze.isPath[x,y])
+                    if(Maze.IsPath[x,y])
                     {
                         e.Graphics.FillRectangle(PathBrush, rect);
                     }
