@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+using static System.Convert;
+
 namespace AMazeCS
 {
     public partial class FormMain : Form
@@ -10,7 +12,7 @@ namespace AMazeCS
         private readonly int TileSize = 5;
         private readonly SolidBrush WallBrush = new SolidBrush(Color.Blue);
         private readonly SolidBrush RoadBrush = new SolidBrush(Color.White);
-        private readonly SolidBrush PathBrush = new SolidBrush(Color.Yellow);
+        private readonly SolidBrush PathBrush = new SolidBrush(Color.Red);
 
         public FormMain()
         {
@@ -60,6 +62,25 @@ namespace AMazeCS
             {
                 MessageBox.Show("迷宫无解！！！");
             }
+        }
+
+        private void Button_SolveUsingFromTo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int fromX = ToInt32(TextBox_FromX.Text);
+                int fromY = ToInt32(TextBox_FromY.Text);
+
+                int toX = ToInt32(TextBox_ToX.Text);
+                int toY = ToInt32(TextBox_ToY.Text);
+
+                Maze.Solve(fromX, fromY, toX, toY);
+            }
+            catch
+            {
+                MessageBox.Show("文本框输入信息无解！");
+            }
+            Panel_Game.Invalidate();
         }
     }
 }

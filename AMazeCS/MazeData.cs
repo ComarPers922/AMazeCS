@@ -85,8 +85,11 @@ namespace AMazeCS
                 }
             }
         }
-
         public void Solve()
+        {
+            Solve(entranceX, entranceY, exitX, exitY);
+        }
+        public void Solve(int fromX, int fromY, int toX, int toY)
         {
             for (int i = 0; i < Size; i++)
             {
@@ -98,7 +101,7 @@ namespace AMazeCS
             }
             bool isSolved = false;
             Queue<Position> queue = new Queue<Position>();
-            Position entrance = new Position(entranceX, entranceY);
+            Position entrance = new Position(fromX, fromY);
             queue.Enqueue(entrance);
             visited[entrance.X, entrance.Y] = true;
 
@@ -106,7 +109,7 @@ namespace AMazeCS
             {
                 Position currentPosition = queue.Dequeue();
 
-                if (currentPosition.X == exitX && currentPosition.Y == exitY)
+                if (currentPosition.X == toX && currentPosition.Y == toY)
                 {
                     findPath(currentPosition);
                     isSolved = true;
@@ -115,7 +118,7 @@ namespace AMazeCS
 
                 for (int i = 0; i < 4; i++)
                 {
-                    int newX = currentPosition.X+ direction[i,0];
+                    int newX = currentPosition.X + direction[i,0];
                     int newY = currentPosition.Y + direction[i,1];
 
                     if (inArea(newX, newY)
